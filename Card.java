@@ -4,10 +4,7 @@
  * Assignment 2
  * 10/24/25
  *
- * The {@code Card} class represents a single playing card from a standard deck.
- * Each card has a {@code suit} and a {@code rank}, which can be represented as
- * either integers or strings. The class includes constructors for different
- * input formats and provides methods for comparing, copying, and printing cards.
+ * Card class representing a card with a suit and rank.
  */
 public class Card {
 
@@ -37,10 +34,10 @@ public class Card {
     }
 
     /**
-     * Constructs a {@code Card} with a given integer suit and rank.
+     * Constructs a Card with a given integer suit and rank.
      *
-     * @param s the integer representing the suit (0–3)
-     * @param r the integer representing the rank (1–13)
+     * @param s the integer representing the suit
+     * @param r the integer representing the rank
      */
     public Card(int s, int r) {
         suit = s;
@@ -48,11 +45,11 @@ public class Card {
     }
 
     /**
-     * Constructs a {@code Card} from string representations of suit and rank.
+     * Constructs a Card from string representations of suit and rank.
      * If invalid strings are provided, defaults to "invalid" values.
      *
-     * @param s the suit name (e.g. "Clubs", "Hearts")
-     * @param r the rank name (e.g. "Ace", "King")
+     * @param s the suit name
+     * @param r the rank name
      */
     public Card(String s, String r) {
         s = s.toLowerCase();
@@ -92,10 +89,10 @@ public class Card {
     }
 
     /**
-     * Constructs a {@code Card} using a string for the suit and an integer for the rank.
+     * Constructs a Card using a string for the suit and an integer for the rank.
      *
-     * @param s the suit name (e.g. "Clubs")
-     * @param r the rank value (1–13)
+     * @param s the suit name
+     * @param r the rank value
      */
     public Card(String s, int r) {
         s = s.toLowerCase();
@@ -120,10 +117,10 @@ public class Card {
     }
 
     /**
-     * Constructs a {@code Card} using an integer for the suit and a string for the rank.
+     * Constructs a Card using an integer for the suit and a string for the rank.
      *
-     * @param s the integer suit (0–3)
-     * @param r the string rank (e.g. "Ace", "Queen")
+     * @param s the integer suit
+     * @param r the string rank
      */
     public Card(int s, String r) {
         r = r.toLowerCase();
@@ -147,7 +144,7 @@ public class Card {
     }
 
     /**
-     * Copy constructor that creates a new {@code Card} identical to another.
+     * Copy constructor that creates a new Card identical to another.
      *
      * @param card2 the card to copy
      */
@@ -159,7 +156,7 @@ public class Card {
     /**
      * Returns the name of this card's suit.
      *
-     * @return the suit as a {@code String}
+     * @return the suit as a String
      */
     public String getSuit() {
         return suits[suit];
@@ -168,7 +165,7 @@ public class Card {
     /**
      * Returns the integer representation of this card's suit.
      *
-     * @return the suit as an {@code int}
+     * @return the suit as an int
      */
     public int getSuitInt() {
         return suit;
@@ -177,7 +174,7 @@ public class Card {
     /**
      * Returns the rank value of this card.
      *
-     * @return the rank as an {@code int}
+     * @return the rank as an int
      */
     public int getRank() {
         return rank;
@@ -186,7 +183,7 @@ public class Card {
     /**
      * Returns the name of this card's rank.
      *
-     * @return the rank as a {@code String}
+     * @return the rank as a String
      */
     public String getRankStr() {
         return ranks[rank];
@@ -197,8 +194,8 @@ public class Card {
      * Cards are first compared by suit, then by rank.
      *
      * @param card2 the card to compare with
-     * @return a negative value if this card is "less than" the other,
-     *         zero if equal, or a positive value if "greater than" the other
+     * @return a negative value if this card is less than the other,
+     *         zero if equal, or a positive value if greater than the other
      */
     public int compareTo(Card card2) {
         if (suit != card2.getSuitInt()) {
@@ -212,7 +209,7 @@ public class Card {
      * Two cards are equal if their suits and ranks are the same.
      *
      * @param obj the object to compare
-     * @return {@code true} if the cards are equal, {@code false} otherwise
+     * @return true if the cards are equal, false otherwise
      */
     public boolean equals(Object obj) {
         Card temp = (Card) obj;
