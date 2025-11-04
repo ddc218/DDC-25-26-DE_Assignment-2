@@ -212,6 +212,12 @@ public class Card {
      * @return true if the cards are equal, false otherwise
      */
     public boolean equals(Object obj) {
+    		if (obj == null) {
+    			return false;
+    		}
+    		if ((obj instanceof Card) == false) {
+    			return false;
+    		}
         Card temp = (Card) obj;
         return (suit == temp.getSuitInt()) && (rank == temp.getRank());
     }

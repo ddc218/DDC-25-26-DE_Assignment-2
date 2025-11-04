@@ -79,6 +79,14 @@ public class Deck {
 	 * @return array of decks per hand or null if not enough cards
 	 */
 	public Deck[] deal(int hands, int cardsPerHand) {
+		if ((hands <= 0) == true) {
+			return null;
+		}
+		
+		if ((cardsPerHand <= 0) == true) {
+			return null;
+		}
+		
 		int totalCardsNeeded = hands * cardsPerHand;
 		if (totalCardsNeeded > topCard + 1) {
 			return null;
